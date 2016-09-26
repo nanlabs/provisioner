@@ -1,0 +1,21 @@
+{
+  "name": "nan-provisioner",
+  "version": "1.0.0",
+  "description": "'NaNLABS Provisioner'",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd && mkdir .provisioner -p && cp node_modules/nanprov/resources/provisions.json .provisioner/provisions.json && cp node_modules/nanprov/resources/default.json .provisioner/default.json",
+    "install": "cd && mkdir .provisioner -p && cp node_modules/nanprov/resources/provisions.json .provisioner/provisions.json && cp node_modules/nanprov/resources/default.json .provisioner/default.json"
+  },
+  "keywords": [
+    "nan",
+    "labs",
+    "provisioner"
+  ],
+  "author": "NaNLABS",
+  "contributors":[{
+    "name": "Maximiliano Caluva",
+    "email": "maximiliano.caluva@nan-labs.com"
+    }],
+  "license": "MIT"
+}

@@ -1,0 +1,5 @@
+{
+  "databases" : ["docker@1.12.1"],
+  "editor" : ["sublime-text", "atom"],
+  "dev" : ["nodejs@6.5.0", "nvm", "postgres@9.5.4"]
+}
