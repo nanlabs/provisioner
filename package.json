@@ -1,5 +1,5 @@
 {
-  "name": "nanprov",
+  "name": "nan-provisioner",
   "version": "1.0.0",
   "description": "'NaNLABS Provisioner'",
   "main": "index.js",
