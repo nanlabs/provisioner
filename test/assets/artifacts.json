@@ -1,0 +1,121 @@
+{
+  "nvm": {
+    "0.31.6": {
+      "scripts": [
+        "echo NVM@0.31.6 installing",
+        "echo NVM@0.31.6 installing2",
+        "echo NVM@0.31.6 installing3",
+        "echo NVM@0.31.6 installing4",
+        "echo NVM@0.31.6 installed"
+      ],
+      "dependencies" : [
+        "postgres@9.5.4"
+      ],
+      "description": [
+        "Installing NVM@0.31.6"
+      ]
+    },
+    "0.31.5": {
+      "scripts": [
+        "echo NVM@0.31.5 installing",
+        "echo NVM@0.31.5 installing2",
+        "echo NVM@0.31.5 installed."
+      ],
+      "dependencies": [],
+      "description": [
+        "Installing NVM@0.31.5"
+      ]
+    }
+  },
+  "docker": {
+    "1.12.1": {
+      "scripts": [
+        "echo Docker@1.12.1 installing",
+        "echo Docker@1.12.1 installing2",
+        "echo Docker@1.12.1 installing3",
+        "echo Docker@1.12.1 installed"
+      ],
+      "dependencies":[
+        "nodejs@6.5.0"
+      ],
+      "description": [
+        "Installing Docker@1.12.1"
+      ]
+    }
+  },
+  "nodejs": {
+    "6.5.0": {
+      "dependencies": [
+        "nvm@0.31.5"
+      ],
+      "scripts": [
+        "echo Node.JS@6.5.0 installing",
+        "echo Node.JS@6.5.0 installing2",
+        "echo Node.JS@6.5.0 installing3",
+        "echo Node.JS@6.5.0 installed"
+      ],
+      "description": [
+        "Installing Node.js@6.5.0"
+      ]
+    },
+    "4.5.0": {
+      "dependencies": [
+        "nvm@0.31.5"
+      ],
+      "scripts": [
+        "echo Node.JS@4.5.0 installing2",
+        "echo Node.JS@4.5.0 installing3",
+        "echo Node.JS@4.5.0 installing4",
+        "echo Node.JS@4.5.0 installed"
+      ],
+      "description": [
+        "Installing Node.js@4.5.0"
+      ]
+    }
+  },
+	"atom": {
+		"1.10.1": {
+			"scripts": [
+        "echo Atom@1.10.1 Installing",
+        "echo Atom@1.10.1 Installed"
+			],
+			"dependencies": [
+				"git@2.10.0"
+			],
+			"logs": [
+				"IDE: Atom",
+				"Atom (Web Development IDE)"
+			]
+		}
+	},
+	"git": {
+		"2.10.0": {
+			"scripts": [
+				"echo Git@2.10.0 Installing",
+				"echo Git@2.10.0 Installed"
+			],
+			"dependencies": [],
+			"logs": [
+				"Dev: Git",
+				"Git (Version Controle)"
+			]
+		}
+	},
+  "postgres": {
+    "9.5.4": {
+      "dependencies": [
+        "docker@1.12.1"
+      ],
+      "scripts": [
+        "echo Postgres installing",
+        "echo Postgres installing2",
+        "echo Postgres installing3",
+        "echo Postgres installing4",
+        "echo Postgres installed"
+      ],
+      "description": [
+        "Installing Postgres@9.5.4"
+      ]
+    }
+  }
+}

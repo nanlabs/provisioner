@@ -1,0 +1,357 @@
+{
+	"keepass2": {
+		"2.0.0": {
+			"scripts": [
+				"sudo apt-get install keepass2 -y"
+			],
+			"dependencies": [],
+			"logs": [
+				"UTILS: KeePass2",
+				"KeePass2 (Store Passwords)"
+			]
+		}
+	},
+	"google-chrome": {
+		"52.0.2": {
+			"scripts": [
+				"wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
+				"sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb",
+				"sudo apt-get install -f"
+			],
+			"dependencies": [],
+			"logs": [
+				"BROWSER: Google Chrome",
+				"Google Chrome (Web Browser)"
+			]
+		}
+	},
+	"atom": {
+		"1.10.1": {
+			"scripts": [
+				"wget -O 'atom.deb' -q --show-progress 'https://atom.io/download/deb'",
+				"sudo dpkg -i --force-depends atom.deb -y",
+				"sudo apt-get install -f -y"
+			],
+			"dependencies": [
+				"git@2.10.0"
+			],
+			"logs": [
+				"IDE: Atom",
+				"Atom (Web Development IDE)"
+			]
+		}
+	},
+	"git" : {
+		"2.10.0": {
+			"scripts": [
+				"sudo apt-get update",
+				"sudo apt-get install git"
+			],
+			"dependencies": [],
+			"logs": [
+				"Dev: Git",
+				"Git (Version Controle)"
+			]
+		}
+	},
+	"docker": {
+		"1.12.1": {
+			"scripts": [
+				"sudo apt-get update",
+				"sudo apt-get install apt-transport-https ca-certificates -y",
+				"sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D",
+				"sudo touch /etc/apt/sources.list.d/docker.list",
+				"echo 'deb https://apt.dockerproject.org/repo ubuntu-xenial main' | sudo tee -a /etc/apt/sources.list.d/docker.list",
+				"sudo apt-get install linux-image-extra-$(uname -r)",
+				"sudo apt-get update",
+				"sudo apt-get install docker-engine -y",
+				"sudo groupadd docker",
+				"sudo usermod -aG docker $USER"
+			],
+			"dependencies": [],
+			"logs": [
+				"OPS: Docker",
+				"Docker (Virtualization Tool)"
+			]
+		}
+	},
+	"docker-compose": {
+		"1.8.1": {
+			"scripts": [
+				"wget https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m`",
+				"chmod a+x docker-compose-*",
+				"sudo mv docker-compose-* /usr/local/bin/docker-compose"
+			],
+			"dependencies": [
+				"docker@1.12.1"
+			],
+			"logs": [
+				"DOCKER: Composer",
+				"Docker Composer"
+			]
+		}
+	},
+	"terminator": {
+		"1.8.1": {
+			"scripts": [
+				"sudo apt-get install terminator -y",
+				"mkdir -p ~/.config/terminator",
+				"cp terminator.config ~/.config/terminator/config"
+			],
+			"dependencies": [],
+			"logs": [
+				"CONSOLE: Terminator",
+				"Terminator (Console)"
+			]
+		}
+	},
+	"mongo-client": {
+		"1.2.2": {
+			"scripts": [
+				"wget -O Mongoclient-linux-x64.zip -q --show-progress https://github.com/rsercano/mongoclient/releases/download/1.2.2/linux-portable-x64.zip",
+				"unzip -q Mongoclient-linux-x64.zip -d ~/opt",
+				"cmv ~/opt/Mongoclient* ~/opt/mongo-client",
+				"rm Mongoclient-linux-x64.zip",
+				"sudo ln -s /home/`echo $USER`/opt/mongo-client/Mongoclient /usr/bin/mongoclient"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: Mongo Client",
+				"Mongo Client (Dev)"
+			]
+		}
+	},
+	"mysql-workbench": {
+		"6.3.0": {
+			"scripts": [
+				"sudo apt-get install mysql-workbench -y"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: MySQL WorkBench",
+				"MySQL WorkBench (Dev)"
+			]
+		}
+	},
+	"sqlite-browser": {
+		"3.9.0": {
+			"scripts": [
+				"sudo apt-get install sqlitebrowser -y"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: SQLite Browser",
+				"SQLite Browser (Dev)"
+			]
+		}
+	},
+	"pgadmin3": {
+		"1.0.1": {
+			"scripts": [
+				"sudo apt-get install pgadmin3 -y"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: PGAdmin3",
+				"PGAdmin3 (Dev)"
+			]
+		}
+	},
+	"sqlite": {
+		"3.14.1": {
+			"scripts": [
+				"sudo apt-get install sqlite3 -y"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: SQLite",
+				"SQLite (Dev)"
+			]
+		}
+	},
+	"docker-mysql-database": {
+		"5.7.15": {
+			"scripts": [
+				"sudo docker pull mysql",
+				"sudo docker run --name mysql -e MYSQL_ROOT_PASSWORD=`echo $PASSWORD` -p 3306:3306 -d mysql",
+				"sudo docker stop mysql"
+			],
+			"dependencies": [
+				"docker@1.12.1"
+			],
+			"logs": [
+				"DOCKER: MySQL Database",
+				"MySQL Database (Docker)",
+				"MySQL runs on port 3306",
+				"Root user/password: `echo $PASSWORD`/`echo $PASSWORD`"
+			]
+		}
+	},
+	"docker-mongo-database": {
+		"3.2.9": {
+			"scripts": [
+				"sudo docker pull mongo",
+				"sudo docker run --name mongo -p 27017:27017 -d mongo",
+				"sudo docker stop mongo"
+			],
+			"dependencies": [
+				"docker@1.12.1"
+			],
+			"logs": [
+				"DOCKER: Mongo Database",
+				"Mongo Database (Docker)",
+				"Mongo runs on port 27017"
+			]
+		}
+	},
+	"docker-postgres-database": {
+		"9.5.4": {
+			"scripts": [
+				"sudo docker pull postgres",
+				"sudo docker run --name postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD-p 27017:27017 -d mongo",
+				"sudo docker stop postgres"
+			],
+			"dependencies": [
+				"docker@1.12.1"
+			],
+			"logs": [
+				"DOCKER: Postgres Database",
+				"Postgres Database (Docker)",
+				"Postgres runs on port 5432",
+				"Root user/password: `echo $PASSWORD`/`echo $PASSWORD`"
+			]
+		}
+	},
+	"docker-elasticsearch-database": {
+		"2.4.0": {
+			"scripts": [
+				"sudo docker pull elasticsearch",
+				"sudo docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -d elasticsearch elasticsearch -Des.node.local='true'",
+				"sudo docker stop elasticsearch"
+			],
+			"dependencies": [
+				"docker@1.12.1"
+			],
+			"logs": [
+				"DOCKER: Elasticsearch Database",
+				"Elasticsearch Database (Docker)",
+				"Elasticsearch runs on port 9200",
+				"Also uses 9300 for Cluster communication"
+			]
+		}
+	},
+	"docker-kibana-analytics": {
+		"2.4.0": {
+			"scripts": [
+				"sudo docker pull kibana",
+				"sudo docker run --name kibana --link elasticsearch -p 5601:5601 -d kibana",
+				"sudo docker stop kibana"
+			],
+			"dependencies": [
+				"docker@1.12.1",
+				"docker-elasticsearch-database@2.4.0"
+			],
+			"logs": [
+				"DOCKER(Elasticsearch): Kibana Analytics",
+				"Kibana Analytics (Docker)",
+				"Kibana runs on port 9200"
+			]
+		}
+	},
+	"jdk": {
+		"1.8.0": {
+			"scripts": [
+				"sudo apt-get install python-software-properties -y",
+				"sudo add-apt-repository ppa:webupd8team/java -y",
+				"sudo apt-get update",
+				"echo 'oracle-java8-installer shared/accepted-oracle-license-v1-1 select true' | sudo debconf-set-selections",
+				"sudo apt-get install oracle-java8-installer -y",
+				"echo 'export JAVA_HOME=/usr/lib/jvm/java-8-oracle' >> ~/.bashrc"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: JDK",
+				"JDK (Dev)"
+			]
+		}
+	},
+	"android-studio": {
+		"2.1.2": {
+			"scripts": [
+				"wget -O android-studio.zip -q --show-progress https://dl.google.com/dl/android/studio/ide-zips/2.1.2.0/android-studio-ide-143.2915827-linux.zip",
+				"unzip -q android-studio.zip -d ~/opt/",
+				"rm android-studio.zip",
+				"sudo ln -s /home/`echo $USER`/opt/android-studio/bin/studio.sh /usr/bin/android-studio"
+			],
+			"dependencies": [],
+			"logs": [
+				"IDE: Android Studio",
+				"Android Studio (IDE)"
+			]
+		}
+	},
+	"intellij-idea": {
+		"2.1.0": {
+			"scripts": [
+				"wget -q --show-progress https://download.jetbrains.com/idea/ideaIC-2016.2.1.tar.gz",
+				"tar -xf ideaIC-2016.2.1.tar.gz",
+				"mv idea-IC* idea",
+				"mv idea ~/opt/idea",
+				"sudo ln -s /home/`echo $USER`/opt/idea/bin/idea.sh /usr/bin/idea"
+			],
+			"dependencies": [],
+			"logs": [
+				"IDE: IntelliJ Idea",
+				"IntelliJ Idea (IDE)"
+			]
+		}
+	},
+	"jmeter": {
+		"3.0.0": {
+			"scripts": [
+				"wget -q --show-progress http://apache.dattatec.com//jmeter/binaries/apache-jmeter-3.0.tgz",
+				"tar -xf apache-jmeter-3.0.tgz",
+				"mv apache-jmeter-3.0 ~/opt/jmeter",
+				"rm apache-jmeter-3.0.tgz",
+				"sudo ln -s /home/`echo $USER`/opt/jmeter/bin/jmeter /usr/bin/jmeter"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: JMeter",
+				"JMeter (Dev)"
+			]
+		}
+	},
+	"apache-utils": {
+		"2.2.22": {
+			"scripts": [
+				"sudo apt-get install apache2-utils -y"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: Apache2 Utils",
+				"Apache2 Utils (Dev)"
+			]
+		}
+	},
+	"android-sdk": {
+		"2.1.2": {
+			"scripts": [
+				"wget -O android-sdk.tar.gz -q --show-progress https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz",
+				"tar -xf android-sdk.tar.gz",
+				"sudo mv android-sdk-linux/ /usr/lib/android-sdk",
+				"rm android-sdk.tar.gz",
+				"sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 -y",
+				"sudo ln -s /usr/lib/android-sdk/tools/android /usr/bin/android",
+				"echo 'export ANDROID_HOME=/usr/lib/android-sdk' >> ~/.bashrc",
+				"android update sdk --no-ui",
+				"sudo ln -s /usr/lib/android-sdk/platform-tools/adb /usr/bin/adb"
+			],
+			"dependencies": [],
+			"logs": [
+				"DEV: Android SDK",
+				"Android SDK (Dev)"
+			]
+		}
+	}
+}
