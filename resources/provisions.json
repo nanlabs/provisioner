@@ -16,12 +16,26 @@
 			"scripts": [
 				"wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
 				"sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb",
-				"sudo apt-get install -f"
+				"sudo apt-get install -f -y"
 			],
 			"dependencies": [],
 			"logs": [
 				"BROWSER: Google Chrome",
 				"Google Chrome (Web Browser)"
+			]
+		}
+	},
+	"nodejs":{
+		"6.6.0": {
+			"scripts": [
+				"sudo apt-get update",
+				"curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -",
+				"sudo apt-get install nodejs -y"
+			],
+			"dependencies": [],
+			"logs": [
+				"Dev: NodeJS",
+				"NodeJS"
 			]
 		}
 	},
@@ -45,7 +59,7 @@
 		"2.10.0": {
 			"scripts": [
 				"sudo apt-get update",
-				"sudo apt-get install git"
+				"sudo apt-get install git -y"
 			],
 			"dependencies": [],
 			"logs": [
@@ -94,9 +108,7 @@
 	"terminator": {
 		"1.8.1": {
 			"scripts": [
-				"sudo apt-get install terminator -y",
-				"mkdir -p ~/.config/terminator",
-				"cp terminator.config ~/.config/terminator/config"
+				"sudo apt-get install terminator -y"
 			],
 			"dependencies": [],
 			"logs": [
@@ -208,7 +220,7 @@
 		"9.5.4": {
 			"scripts": [
 				"sudo docker pull postgres",
-				"sudo docker run --name postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD-p 27017:27017 -d mongo",
+				"sudo docker run --name postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD-p 27017:27017 -d postgres",
 				"sudo docker stop postgres"
 			],
 			"dependencies": [

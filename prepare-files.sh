@@ -1,0 +1,1 @@
+mkdir ~/provisioner -p && cp resources/provisions.json ~/provisioner/provisions.json && cp resources/default.json ~/provisioner/default.json && tput setaf 2; echo 'Files ready!, head to /home/provisioner and edit them if you want!'
