@@ -2,6 +2,7 @@
 ### Description
 Basic provisioner for NaN Labs
 
+<<<<<<< HEAD
 This provisioner will give you two files located in $HOME/.provisioner that you can edit at your preference, provisions.json contains the information for all the artifacts to install, while default.json is the list of artifacts and the version to install, you can remove or add new ones (given that you added them in provisions.json too).
 
 ### Basic Usage
@@ -11,6 +12,15 @@ Edit the files or use the provided ones to install all, and run
 ```
  node index.js
 ```
+=======
+This provisioner will give you two files located in `$HOME/provisioner` that you can edit at your preference, provisions.json contains the information for all the artifacts to install, while default.json is the list of artifacts and the version to install, you can remove or add new ones (given that they are or you added them in provisions.json too).
+
+### Basic Usage
+Execute `./prepare-files.sh` in your terminal to get started, this will make the `$HOME/provisioner` folder.
+In case of Permission Denied, run `chmod u+x prepare-files.sh` and then execute `./prepare-files.sh` again.
+
+Edit the files or use the provided ones to install all the defaults, and run `node index.js`
+>>>>>>> development
 
 
 ### Default includes
