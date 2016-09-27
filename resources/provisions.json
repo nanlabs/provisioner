@@ -25,6 +25,23 @@
 			]
 		}
 	},
+<<<<<<< HEAD
+=======
+	"nodejs":{
+		"6.6.0": {
+			"scripts": [
+				"sudo apt-get update",
+				"curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -",
+				"sudo apt-get install -y nodejs"
+			],
+			"dependencies": [],
+			"logs": [
+				"Dev: NodeJS",
+				"NodeJS"
+			]
+		}
+	},
+>>>>>>> development
 	"atom": {
 		"1.10.1": {
 			"scripts": [
