@@ -3,5 +3,5 @@
   "tools" : ["keepass2@2.0.0", "docker@1.12.1", "docker-compose@1.8.1", "terminator@1.8.1"],
   "databases" : ["mongo-client@1.2.2", "mysql-workbench@6.3.0", "sqlite-browser@3.9.0", "pgadmin3@1.0.1", "sqlite@3.14.1", "docker-mysql-database@5.7.15", "docker-postgres-database@9.5.4", "docker-elasticsearch-database@2.4.0", "docker-kibana-analytics@2.4.0"],
   "ide" : ["atom@1.10.1"],
-  "dev" : ["jdk@1.8.0", "intellij-idea@2.1.0", "jmeter@3.0.0", "apache-utils@2.2.22"]
+  "dev" : ["jdk@1.8.0", "intellij-idea@2.1.0", "jmeter@3.0.0", "apache-utils@2.2.22", "nodejs@6.6.0"]
 }
