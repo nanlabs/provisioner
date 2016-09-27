@@ -9,8 +9,8 @@ const ArtifactReader = require("./lib/artifact-reader.js")
 let artReader = new ArtifactReader();
 let artManager = new ArtifactManager();
 
-let listOfArtifacts = os.homedir() + '/.provisioner/provisions.json';
-let listOfRequests = os.homedir() + '/.provisioner/default.json';
+let listOfArtifacts = os.homedir() + '/provisioner/provisions.json';
+let listOfRequests = os.homedir() + '/provisioner/default.json';
 let finaList;
 let artifactList = artReader.readArtifacts(listOfArtifacts);
 let reqList = artReader.readRequest(listOfRequests);
