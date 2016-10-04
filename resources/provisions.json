@@ -220,7 +220,11 @@
 		"9.5.4": {
 			"scripts": [
 				"sudo docker pull postgres",
+<<<<<<< HEAD
 				"sudo docker run --name postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD-p 27017:27017 -d postgres",
+=======
+				"sudo docker run --name postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD-p 27017:27017 -d mongo",
+>>>>>>> ef60dd1a1cf9bc8a6730664a429ecf46277dc96e
 				"sudo docker stop postgres"
 			],
 			"dependencies": [
