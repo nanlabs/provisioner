@@ -8,6 +8,8 @@ This provisioner will give you two files located in `$HOME/provisioner` that you
 Execute `./prepare-files.sh` in your terminal to get started, this will make the `$HOME/provisioner` folder.
 In case of Permission Denied, run `chmod u+x prepare-files.sh` and then execute `./prepare-files.sh` again.
 
+If you don't have NodeJS installed, you can do it by running `chmod u+x install-nodejs.sh && ./install-nodejs.sh`
+
 Edit the files or use the provided ones to install all the defaults, and run `node index.js`
 
 ### Default includes
